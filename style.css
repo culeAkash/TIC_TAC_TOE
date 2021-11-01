@@ -86,3 +86,18 @@ nav ul{
     border-radius: 6px;
     cursor: pointer;
 }
+
+@media screen and (max-width: 800px)
+{
+    .gameContainer{
+        flex-wrap: wrap;
+    }
+
+    .gameInfo{
+        margin-top: 34px;
+    }
+
+    .gameInfo h1{
+        font-size: 1 rem;
+    }
+}
