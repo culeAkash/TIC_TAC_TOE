@@ -23,7 +23,6 @@ nav ul{
 
 
 .gameContainer{
-    background-color: ;
     display: flex;
     justify-content: center;
     margin-top: 50px;
@@ -55,10 +54,12 @@ nav ul{
 .gameInfo{
     padding: 0 34px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
 }
 
-.imgBox{
-    display: none;
+.imgBox img{
+    width: 0;
+    transition: width 1s ease-in-out ;
 }
 
 
@@ -76,4 +77,12 @@ nav ul{
 
 .bb-0{
     border-bottom: 0;
+}
+
+#reset{
+    margin: 0 23px ;
+    padding: 6px 14px;
+    background-color: azure;
+    border-radius: 6px;
+    cursor: pointer;
 }
