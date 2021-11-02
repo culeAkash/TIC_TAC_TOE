@@ -49,11 +49,28 @@ Array.from(boxes).forEach(element=>{
             changeTurn();
             turn.play();
             checkWin();
-            if(!isGameOver)
+            checkFilled();
+            if(!isGameOver){
             document.getElementsByClassName("info")[0].innerText= "Turn for "+turnMark;
         }
+        else{
+            resetGame();
+        }
+    }
     })
 })
+
+const checkFilled= ()=>{
+    let boxText= document.querySelectorAll(".boxText");
+    isGameOver=true;
+    Array.from(boxText).forEach(element=>{
+        if(element.innerText===""){
+            isGameOver= false;
+        }
+    });
+    
+    
+}
 
 
 //Add onclick on reset button
@@ -68,3 +85,16 @@ reset.addEventListener("click",()=>{
     document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width= "0px";
 
 })
+
+const resetGame= ()=>{
+    let boxText= document.querySelectorAll(".boxText");
+    Array.from(boxText).forEach(element=>{
+        element.innerText="";
+    });
+    isGameOver= false;
+    turnMark="X";
+    document.getElementsByClassName("info")[0].innerText= "Turn for "+turnMark;
+    gameOver.play();
+    document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width= "0px";
+     
+}
