@@ -99,5 +99,7 @@ const resetGame= ()=>{
     document.getElementsByClassName("info")[0].innerText= "Turn for "+turnMark;
     gameOver.play();
     document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width= "0px";
+    line= document.querySelector(".line");
+            line.style.width= "0vw";
      
 }
