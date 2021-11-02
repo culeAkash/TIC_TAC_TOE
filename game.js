@@ -36,6 +36,10 @@ const checkWin=()=>{
             line.style.width= "20vw";
             line.style.transform= `translate(${e[3]}vw,${e[4]}vw) rotate(${e[5]}deg)`
             gameOver.play();
+           setTimeout(() => {
+               resetGame();
+           }, 3000);
+            
         }
     })
 }
@@ -52,12 +56,17 @@ Array.from(boxes).forEach(element=>{
             changeTurn();
             turn.play();
             checkWin();
-            checkFilled();
+            if(!isGameOver){
+                checkFilled();
+                if(!isGameOver){
+                    document.getElementsByClassName("info")[0].innerText= "Turn for "+turnMark;
+                }
+                else{
+                    resetGame();
+                }
+            }
             if(!isGameOver){
             document.getElementsByClassName("info")[0].innerText= "Turn for "+turnMark;
-        }
-        else{
-            resetGame();
         }
     }
     })
