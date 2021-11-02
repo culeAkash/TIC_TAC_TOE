@@ -34,6 +34,7 @@ nav ul{
     grid-template-columns: repeat(3,10vw);
     grid-template-rows: repeat(3,10vw);
     font-family: sans-serif;
+    position: relative;
 }
 
 .box{
@@ -55,6 +56,10 @@ nav ul{
     padding: 0 34px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 25px;
+}
+
+.gameInfo h1{
+    font-size: 2.5rem;
 }
 
 .imgBox img{
@@ -87,7 +92,14 @@ nav ul{
     cursor: pointer;
 }
 
-@media screen and (max-width: 800px)
+.line{
+    background-color: black;
+    width: 0vw;
+    height: 3px;
+    position: absolute;
+}
+
+@media screen and (max-width: 950px)
 {
     .gameContainer{
         flex-wrap: wrap;
@@ -98,6 +110,11 @@ nav ul{
     }
 
     .gameInfo h1{
-        font-size: 1 rem;
+        font-size: 1.5rem;
+    }
+
+    .container{
+        grid-template-rows: repeat(3,20vw);
+        grid-template-columns: repeat(3,20vw);
     }
 }
