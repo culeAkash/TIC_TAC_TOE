@@ -87,14 +87,7 @@ const checkFilled= ()=>{
 
 //Add onclick on reset button
 reset.addEventListener("click",()=>{
-    let boxText= document.querySelectorAll(".boxText");
-    Array.from(boxText).forEach(element=>{
-        element.innerText="";
-    });
-    isGameOver= false;
-    turnMark="X";
-    document.getElementsByClassName("info")[0].innerText= "Turn for "+turnMark;
-    document.querySelector(".imgBox").getElementsByTagName("img")[0].style.width= "0px";
+   resetGame();
 
 })
 
